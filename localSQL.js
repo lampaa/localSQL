@@ -114,7 +114,7 @@ localSQL.func = localSQL.prototype = {
 	
 	fetch: function(type) {
 		
-	},
+	}, 
 	
 	_createTable: function(expression) {
 		// get table name
@@ -367,10 +367,10 @@ localSQL.func = localSQL.prototype = {
 			if(tags.indexOf(parse_expression[pos]) != -1) {
 						
 				if(!(parse_expression[pos-1] != undefined 
-					&& parse_expression[pos-1] == '\\'  // если предыдущий символ - обратный слеш
+					&& parse_expression[pos-1] == '\\'  // РµСЃР»Рё РїСЂРµРґС‹РґСѓС‰РёР№ СЃРёРјРІРѕР» - РѕР±СЂР°С‚РЅС‹Р№ СЃР»РµС€
 					&& parse_expression[pos-2] != undefined
 					&& parse_expression[pos-2] != '\\') 
-					|| parse_expression[pos-1] != '\\'// если предыдущий символ - не слеш, то обрабатываем
+					|| parse_expression[pos-1] != '\\'// РµСЃР»Рё РїСЂРµРґС‹РґСѓС‰РёР№ СЃРёРјРІРѕР» - РЅРµ СЃР»РµС€, С‚Рѕ РѕР±СЂР°Р±Р°С‚С‹РІР°РµРј
 				) {
 
 					if(compiler_tokens[parse_expression[pos]] == undefined || !compiler_tokens[parse_expression[pos]]) {
