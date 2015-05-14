@@ -1,0 +1,23 @@
+<script src='localSQL.js'></script>
+
+<script>
+
+
+localSQL(':memory', function() {
+	this.query("CREATE  TABLE  table_name  (  id  INT    (10)  AUTO_INCREMENT  KEY,  name  VARCHAR( 255 ) KEY,  info  VARCHAR ( 255)  DEFAULT('your text' ), age INT(2), date DATETIME DEFAULT(NOW()), counter INT(10) DEFAULT(10))");
+	this.query("INSERT INTO table_name (id, name, info, age) VALUES (NULL, 'Al,ex', 'Per\"\"son\\'', 20)");
+	this.query("INSERT INTO table_name VALUES (NULL, 'Alex', 'Person', 10, NOW(), 100)");
+
+
+	this.query("SELECT age, name FROM table_name WHERE id = 10"); 
+	
+	console.log(this.query("SELECT age, name FROM table_name WHERE id = 10").fetch());
+	
+	//this.query("SELECT * FROM table");
+	//this.query("SELECT * FROM table");
+	//this.query("SELECT * FROM table");
+
+	this.close();
+});
+
+</script>
